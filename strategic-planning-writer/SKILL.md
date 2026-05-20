@@ -62,13 +62,14 @@ For long reports, use a phased output plan rather than compressing all chapters 
 
 ### 5. Route Through Citer
 
-After drafting, route the text through `strategic-planning-citer` to:
-- Audit every factual claim for traceable sources
-- Generate a citation ledger with unique citation IDs
-- Flag unverifiable assertions as `[待补充引用]`
-- Ensure every number, policy reference, and strategic judgment has a verifiable origin
+初稿完成后，将文本交给 `strategic-planning-citer` 进行以下处理：
+- 对每个事实性论断进行来源审核，正文中标注 【1】【2】【3】 序号
+- 生成文末「参考文献」汇总（区分知识库来源、WebSearch 检索来源、用户提供来源）
+- 对 WebSearch 检索到的来源，文末附标题超链接方便溯源
+- 将无法验证的断言标记为 `[待补充引用]`
+- 确保每个数字、政策引用、战略判断都有可追溯的来源
 
-The citer ensures引用可溯源（traceability）and 引用真实性（authenticity）before the report reaches review.
+Citer 确保引用可溯源（traceability）和引用真实性（authenticity），然后报告进入 reviewer 审查。
 
 ### 6. Apply Quality Gates
 
@@ -102,9 +103,25 @@ Use neutral official language for unconfirmed internal expressions; mark them as
 
 ## Evidence Discipline
 
-Source priority: user-provided materials > National PipeChina official materials > State Council/NDRC/NEA/SASAC/NBS > IEA/industry reports.
+Source priority: 用户提供材料 > 已上传知识库 > 国家管网集团官网/年报/公告 > 国务院/发改委/能源局/国资委/国家统计局 > IEA/行业报告。
 
-When evidence is missing, write: `[待补充：需提供...内部数据]`. Do not hide uncertainty inside polished language.
+**缺失数据处理流程**：
+
+1. **先检索知识库**：检查已上传的知识库中是否有相关数据
+2. **其次 WebSearch 检索官方网站**：按 .gov.cn → 央企官网 → IEA 等国际组织官网 的优先级检索
+3. **检索到则直接使用**：将数据填入正文，消除 [待补充] 标记
+4. **检索不到再留空**：仅当知识库和官方网站均无法找到时，才使用 [待补充] 标记
+
+**[待补充] 标记格式**：
+
+使用淡红色底色标记，在 Markdown/HTML 输出中：
+```
+<span style="background-color: #FFF0F0; color: #D32F2F;">[待补充：需提供...内部数据]</span>
+```
+
+纯文本输出使用 `[待补充：...]` 格式。绝不允许用华丽措辞掩盖数据缺口。
+
+**引用格式**：正文使用 【1】【2】【3】 上标编号，文末附参考文献汇总，区分知识库来源和 WebSearch 检索来源。详细格式参见 `strategic-planning-citer`。
 
 After drafting, forward to `strategic-planning-citer` for systematic citation audit, ledger generation, and authenticity verification.
 
@@ -119,11 +136,14 @@ After drafting, forward to `strategic-planning-citer` for systematic citation au
 ## Completion Checklist
 
 - [ ] 全报告字数达到20,000字底线，能超则超，无上限约束
-- [ ] Each strategic judgment has evidence, assumption, or placeholder
-- [ ] Objectives linked to prior analysis and downstream tasks
-- [ ] No duplicated paragraphs, policy dumping, or slogan-only language
-- [ ] Terms, dates, units, and section numbering standardized
-- [ ] Unresolved data placeholders listed
+- [ ] 每个战略判断有证据、假设或 [待补充] 标记支撑
+- [ ] 目标链接到前面的分析和后面的任务
+- [ ] 无重复段落、政策堆砌或纯粹口号语言
+- [ ] 术语、日期、单位和章节编号标准化
+- [ ] [待补充] 标记使用淡红色底色（Markdown/HTML 输出）
+- [ ] 缺失数据已先尝试知识库检索和 WebSearch 官方网站检索，实在找不到才留空
+- [ ] 正文中引用使用 【1】【2】【3】 序号标注
+- [ ] 未解决的数据占位符在文末参考文献汇总中列出
 
 ## References
 

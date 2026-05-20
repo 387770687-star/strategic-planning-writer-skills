@@ -1,71 +1,146 @@
-# Evidence and Citation
+# Evidence and Citation（证据与引用规范）
 
-Use this file to keep reports factual and credible.
+确保报告中每个事实性论断都有来源，缺失数据先检索再留空。
 
-## Source Priority
+## Source Priority（来源优先级）
 
-1. User-provided internal files, project lists, approved planning drafts, data tables.
-2. National PipeChina official website, annual reports, announcements, social responsibility reports, public speeches.
-3. State Council, National Development and Reform Commission, National Energy Administration, SASAC, National Bureau of Statistics.
-4. Provincial government and provincial energy bureaus for regional plans.
-5. International and industry sources: IEA, Energy Institute/BP, CNPC/Sinopec/CNOOC public reports, recognized research institutes.
+1. 用户提供的内部文件、项目清单、规划稿、数据表。
+2. 已上传的知识库内容（wiki 知识库）。
+3. 国家管网集团官网、年报、公告、社会责任报告、公开讲话。
+4. 国务院、发改委、能源局、国资委、国家统计局等官方机构。
+5. 省级政府和省能源局（区域规划数据）。
+6. 国际和行业来源：IEA、Energy Institute、中石油/中石化/中海油公开报告、权威研究机构。
 
-## Required Evidence Fields
+## Required Evidence Fields（证据必填字段）
 
-For each key fact, track:
+每个关键事实需记录：
 
-- fact statement
-- source
-- year/date
-- statistical scope
-- unit
-- whether it is confirmed, forecast, or assumption
+- 事实陈述
+- 来源（知识库 / 用户提供 / 官方网站检索）
+- 年份/日期
+- 统计口径
+- 单位
+- 确认状态（已确认 / 预测 / 假设 / 待验证）
 
-## Data That Must Not Be Invented
+## Data That Must Not Be Invented（禁止编造的数据）
 
-- current pipeline mileage, capacity, station count, storage capacity, LNG capacity
-- investment plan, project list, project length, route, pressure, diameter, construction period
-- revenue, profit, IRR, tariff, utilization rate
-- internal organization structure, leadership wording, internal KPIs
-- province-specific support requests
-- approved strategic targets
+- 当前管道里程、管容、站场数量、储气库容量、LNG 接收能力
+- 投资计划和金额、项目清单、管道路由、管径、压力、建设周期
+- 收入、利润、内部收益率、管输费率、利用率
+- 内部组织架构、领导讲话措辞、内部 KPI
+- 各省特定支持政策诉求
+- 已批复的战略目标
 
-Use placeholders:
+## [待补充] 标记规范（重要）
 
-- `[待补充：2025年末天然气管道在役里程]`
-- `[待核验：该项目是否已纳入集团投资计划]`
-- `[待提供：分年度投资节奏及资金来源]`
+### 标记格式
 
-## Citation Style
+使用淡红色底色标记，在 Markdown 或 HTML 输出中使用：
 
-In formal Chinese reports, avoid footnote clutter unless the user asks. Prefer inline attribution:
+```html
+<span style="background-color: #FFF0F0; color: #D32F2F; padding: 1px 4px;">[待补充：具体说明需要的数据]</span>
+```
 
-- "国家能源局数据显示，..."
-- "根据国家发展改革委有关天然气管道运输价格管理政策，..."
-- "据集团公开资料，..."
-- "综合IEA、Energy Institute等机构研判，..."
+若输出为纯文本/飞书文档，使用 `[待补充：...]` 格式并在上下文中说明。
 
-For internal drafts, a source note can be added after tables:
+### [待补充] 使用规则
 
-`资料来源：用户提供材料、国家能源局公开数据、集团公开资料，需以最终核定口径为准。`
+**优先级顺序**：
 
-## Evidence Integration
+1. **先检索已上传的知识库**：检查知识库中是否有相关数据
+2. **其次通过 WebSearch 检索官方网站**：按官方网站优先级（.gov.cn → 央企官网 → IEA等国际组织）检索
+3. **检索到则直接使用**：将数据填入正文，消除 [待补充] 标记
+4. **检索不到再留空**：仅在知识库和官方网站均无法找到时，保留 [待补充] 标记
 
-Do not dump policy text. Use:
+### [待补充] 常用格式
 
-`policy -> requirement -> enterprise implication -> planning response`
+```
+[待补充：2025年末天然气管道在役里程]
+[待核验：该项目是否已纳入集团投资计划]
+[待提供：分年度投资节奏及资金来源]
+[待补充引用：需提供该政策文件原文]
+```
 
-Example:
+## Citation Style（引用格式）
 
-`能源安全相关政策强调提升基础设施保障能力。这意味着管网规划不能仅以经济负荷为单一约束，还需兼顾应急保供、区域均衡、调峰能力和系统韧性。规划上应...`
+### 正文内引用
 
-## Missing Evidence Handling
+采用上标方括号编号，紧跟在被引用的事实之后：
 
-If evidence is insufficient, provide a professional draft with visible assumptions:
+```
+截至2025年末，全国天然气管道总里程达到XX万公里【1】。根据国务院《关于促进天然气协调稳定发展的若干意见》（国发〔2018〕31号）的要求，需加快储气设施建设【2】。
+```
 
-1. write a polished paragraph using placeholders
-2. list required data at the end of the section
-3. explain how each missing item affects the conclusion
+编号从 【1】 开始，按正文出现顺序递增。
 
-Never let a polished tone conceal a data gap.
+### 文末参考文献汇总
 
+在每个章节末尾或全报告末尾，附上参考文献汇总：
+
+```
+### 参考文献
+
+【1】国家统计局，《中国统计年鉴2025》，2025年。来源：知识库
+【2】国务院，《关于促进天然气协调稳定发展的若干意见》（国发〔2018〕31号），2018年。来源：知识库
+【3】国家能源局，《[中国天然气发展报告2025](https://www.nea.gov.cn/xxx)》，2025年。检索自国家能源局官网
+```
+
+### 来源标注分类
+
+| 来源类型 | 文末标注 |
+|---|---|
+| 知识库已有数据 | `来源：知识库` |
+| 通过 WebSearch 在官方网站检索 | `检索自：<完整URL>`，附标题超链接 |
+| 用户提供的内部材料 | `来源：用户提供` |
+| 知识库数据经官网交叉验证 | `来源：知识库；交叉验证：<URL>` |
+
+### 表下图下出处
+
+使用引用编号指向文末汇总：
+
+```
+资料来源：【1】【3】【5】。
+数据截至：2025年12月。
+注：含在建项目，不含省内支线。
+```
+
+## Evidence Integration（证据融入）
+
+不要堆砌政策原文。使用以下链条：
+
+```
+政策要求 → 对企业的含义 → 规划应对
+```
+
+示例：
+
+```
+能源安全相关政策强调提升基础设施保障能力【2】。这意味着管网规划不能仅以经济负荷为单一约束，还需兼顾应急保供、区域均衡、调峰能力和系统韧性。规划上应优先布局储气调峰设施，将应急保供能力纳入考核指标体系。
+```
+
+## Missing Evidence Handling（缺失证据处理）
+
+当证据不足时：
+
+1. 先检索知识库和官方网站尝试补充
+2. 仍无法获取时：使用 `[待补充：...]` 标记写出专业段落
+3. 在章节末尾列出所需数据及其对结论的影响
+
+**绝不允许用华丽的措辞掩盖数据缺口。**
+
+## WebSearch 检索指引
+
+当需要从网络补充数据时，检索优先级：
+
+1. 政府网站 (.gov.cn) — 国务院、发改委、能源局、国家统计局
+2. 央企官网 — 国家管网集团、中石油、中石化、中海油
+3. 国际组织官网 — IEA、EIA、World Bank、Energy Institute
+4. 行业协会官网 — 中国石油和化学工业联合会等
+
+检索到的数据需记录：
+- 完整 URL
+- 检索日期
+- 来源文件发布日期
+- 交叉验证状态
+
+禁止从非官方新闻网站和自媒体平台直接引用数据。
