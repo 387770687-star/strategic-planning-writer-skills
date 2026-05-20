@@ -66,6 +66,9 @@ List what's missing, why it matters, required sources, and interim treatment.
 - Prefer official Chinese public sources for policy and company facts.
 - Mark every uncertain fact as pending verification.
 - Convert every policy and data point into an implication; do not just summarize sources.
+- 知识库中缺失的数据，应优先检索官方网站获取（政府网站、部委网站、央企官网、国家统计局、IEA等国际组织官网）。检索到的数据必须交叉验证，单源数据标注"单一来源，未经交叉验证"。
+- 禁止从非官方新闻网站获取数据。以下类网站不得作为数据来源：腾讯新闻、新浪新闻、网易新闻、搜狐新闻、今日头条、百家号、微信公众号、知乎、以及其他商业门户网站和自媒体平台。政策解读和数据报道应追溯到原始出处使用。
+- 搜索引擎返回的非官方来源（如商业新闻、自媒体文章）仅可用于发现原始出处的线索，不得直接引用其中的数据或判断。
 
 ## References
 

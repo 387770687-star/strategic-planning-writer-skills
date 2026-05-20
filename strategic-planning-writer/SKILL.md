@@ -5,7 +5,7 @@ description: Draft, expand, revise, or finalize Chinese strategic planning repor
 
 # Strategic Planning Writer
 
-Write formal Chinese strategic planning reports for central SOE strategy departments. Default output standard: at least 20,000 Chinese characters unless a shorter brief is explicitly requested.
+Write formal Chinese strategic planning reports for central SOE strategy departments. Default output standard: at least 20,000 Chinese characters for full reports unless a shorter brief is explicitly requested. 在满足最低字数要求的基础上，能多写就多写、能写详细就写详细，不以任何上限为约束。宁可字数超标后由用户自行删减，不可因顾虑篇幅而牺牲论证深度。
 
 ## Operating Stance
 
@@ -41,24 +41,36 @@ Select the closest type:
 
 ### 3. Set the Word Budget
 
-For full reports, target 22,000-28,000 Chinese characters. Allocate:
+2万字是底线，不是上限。在底线之上，能多写就多写。以下为各章节最低字数分配，而非目标区间：
 
-| Section | Target |
-|---|---|
-| Executive summary | 1,200-1,800 |
-| Development foundation | 3,000-4,000 |
-| Situation and environment | 3,500-4,800 |
-| Overall thinking and objectives | 2,500-3,500 |
-| Business deployment | 7,000-10,000 |
-| Investment/value/risk | 2,000-3,000 |
-| Safeguards | 2,000-3,000 |
-| Outlook | 800-1,200 |
+| Section | 最低字数 | 说明 |
+|---|---|---|
+| Executive summary | 1,200 | 可根据报告复杂度上浮至2,500+ |
+| Development foundation | 3,000 | 数据越丰富越应展开 |
+| Situation and environment | 3,500 | 政策环境分析应尽可能详尽 |
+| Overall thinking and objectives | 2,500 | 战略逻辑必须完整展开 |
+| Business deployment | 7,000 | 核心章节，无上限，越详细越好 |
+| Investment/value/risk | 2,000 | 有数据支撑时可大幅扩展 |
+| Safeguards | 2,000 | 每项保障措施独立成节展开 |
+| Outlook | 800 | 远景展望适度展开 |
+
+如需压缩，由用户在审阅时指定删减位置，而非初稿自行压缩。
 
 ### 4. Draft Chapter by Chapter
 
 For long reports, use a phased output plan rather than compressing all chapters into one response.
 
-### 5. Apply Quality Gates
+### 5. Route Through Citer
+
+After drafting, route the text through `strategic-planning-citer` to:
+- Audit every factual claim for traceable sources
+- Generate a citation ledger with unique citation IDs
+- Flag unverifiable assertions as `[待补充引用]`
+- Ensure every number, policy reference, and strategic judgment has a verifiable origin
+
+The citer ensures引用可溯源（traceability）and 引用真实性（authenticity）before the report reaches review.
+
+### 6. Apply Quality Gates
 
 Before final delivery, run through `references/quality-gate.md` checklist.
 
@@ -94,6 +106,8 @@ Source priority: user-provided materials > National PipeChina official materials
 
 When evidence is missing, write: `[待补充：需提供...内部数据]`. Do not hide uncertainty inside polished language.
 
+After drafting, forward to `strategic-planning-citer` for systematic citation audit, ledger generation, and authenticity verification.
+
 ## Output Modes
 
 - **Full report mode**: deliver complete 20,000+ char report in stages if needed
@@ -104,7 +118,7 @@ When evidence is missing, write: `[待补充：需提供...内部数据]`. Do no
 
 ## Completion Checklist
 
-- [ ] Target length above 20,000 Chinese characters for full reports
+- [ ] 全报告字数达到20,000字底线，能超则超，无上限约束
 - [ ] Each strategic judgment has evidence, assumption, or placeholder
 - [ ] Objectives linked to prior analysis and downstream tasks
 - [ ] No duplicated paragraphs, policy dumping, or slogan-only language

@@ -9,7 +9,7 @@ Review strategic planning drafts and produce actionable fixes. Act as a strategy
 
 ## When to Use
 
-Trigger when the user asks to review a report, check quality, diagnose problems, or prepare for delivery. Also use after `strategic-planning-writer` produces a draft.
+Trigger when the user asks to review a report, check quality, diagnose problems, or prepare for delivery. Also use after `strategic-planning-writer` produces a draft and `strategic-planning-citer` has verified the citation ledger.
 
 ## Review Stance
 
