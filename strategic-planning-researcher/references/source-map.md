@@ -102,15 +102,16 @@ The following categories of websites and platforms must NOT be used as data sour
 
 When the knowledge base lacks specific data, search in this order:
 
-1. **政府网站** (.gov.cn domains) — State Council, NDRC, NEA, NBS, provincial governments
-2. **央企官网** — National PipeChina, CNPC, Sinopec, CNOOC official sites
-3. **国际组织官网** — IEA (iea.org), EIA (eia.gov), World Bank (worldbank.org), Energy Institute
-4. **行业协会官网** — China Oil and Gas Industry Association, China Petroleum and Chemical Industry Federation
-5. **央企年报/公告** — Annual reports, ESG reports, official announcements published on company websites or stock exchange filings
+1. **知识库 wiki/ 目录** — 整理后的结构化知识
+2. **知识库 raw/ 目录** — 原始资料（只读）
+3. **WebSearch 白名单网站** — 仅限以下范围：100 个白名单网站（详见 CLAUDE.md「WebSearch 限定网站白名单」）、.gov.cn 政府网站、央企官网、IEA/EIA/World Bank 等国际组织官网
+4. **行业协会官网** — 中国石油和化学工业联合会、中国电力企业联合会等（需在白名单内）
 
 Each item retrieved from an official website must be recorded with:
 - Full URL
 - Retrieval date
 - Publication date of the source document (if available)
 - Cross-validation status (single source vs. multi-source confirmation)
+
+**注意**：完整的 100 个网站白名单参见 CLAUDE.md，此处不再重复列出。WebSearch 前必须先确认目标网站是否在白名单范围内。
 

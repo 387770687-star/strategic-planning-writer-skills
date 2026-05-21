@@ -108,8 +108,8 @@
 
 3. **wiki 和 raw 均无法满足时，启动 WebSearch**
    - 仅在知识库（wiki + raw）确实找不到所需信息时才使用
-   - 检索限定官方网站：政府 .gov.cn、部委网站、央企官网、国家统计局、IEA 等国际组织
-   - 检索结果需标注来源 URL，禁止引用非官方网站
+   - **检索范围限定**：只能检索以下白名单中的网站，以及 .gov.cn 政府网站、央企官网（如 pipechina.com.cn、cnpc.com.cn、sinopec.com 等）、IEA 等国际组织官网
+   - 检索结果需标注来源 URL，禁止引用白名单外的网站
 
 4. **时效性校验——wiki/raw 数据可能过时，通过 WebSearch 交叉验证**
    - 即使 wiki/raw 中已有数据，也必须用 WebSearch 检索官方网站验证其时效性
@@ -120,6 +120,140 @@
    - 无法校验的：标注"知识库数据，时效性未经官方校验"
 
 **禁止跳步**：不得跳过 wiki/ 和 raw/ 检索直接使用 WebSearch，也不得跳过时效性校验直接使用知识库旧数据。每次回答涉及数据时，先确认时效性。
+
+### WebSearch 限定网站白名单（共 100 个）
+
+WebSearch 只能检索以下白名单中的网站。除白名单外，允许检索 .gov.cn 政府网站、央企官网（pipechina.com.cn、cnpc.com.cn、sinopec.com、cnooc.com.cn 等）、IEA（iea.org）/ EIA（eia.gov）/ World Bank（worldbank.org）等国际组织官网。
+
+**一、中央新闻网站（13 个）**
+
+| 序号 | 网站名称 | 域名 |
+|---|---|---|
+| 1 | 新华网 | xinhuanet.com |
+| 2 | 人民网 | people.com.cn |
+| 3 | 央视网 | cctv.com / cctv.cn |
+| 4 | 中国网 | china.com.cn |
+| 5 | 国际在线 | cri.cn |
+| 6 | 中国日报网 | chinadaily.com.cn / cn.chinadaily.com.cn |
+| 7 | 央广网 | cnr.cn |
+| 8 | 中国新闻网 | chinanews.com |
+| 9 | 中国青年网 | youth.cn / cyol.com |
+| 10 | 光明网 | gmw.cn |
+| 11 | 中国经济网 | ce.cn |
+| 12 | 环球网 | huanqiu.com |
+| 13 | 中国军网 | 81.cn |
+
+**二、中央新闻单位 / 行业媒体（20 个）**
+
+| 序号 | 网站名称 | 域名 |
+|---|---|---|
+| 14 | 海外网 | haiwainet.cn |
+| 15 | 中工网 | workercn.cn |
+| 16 | 法制网 | legaldaily.com.cn |
+| 17 | 中国科技网 | stdaily.com |
+| 18 | 中国西藏网 | tibet.cn |
+| 19 | 中国台湾网 | taiwan.cn |
+| 20 | 中国民航网 | caacnews.com.cn |
+| 21 | 中国电力新闻网 | cpnn.com.cn |
+| 22 | 中国石化新闻网 | sinopecnews.com.cn |
+| 23 | 中国石油新闻中心 | news.cnpc.com.cn |
+| 24 | 中国海洋石油报 | cnooc.com.cn |
+| 25 | 中国能源报 | cnenergy.org |
+| 26 | 中国经济导报 | ceh.com.cn |
+| 27 | 中国改革报 | crn.net.cn |
+| 28 | 中国证券报 | cs.com.cn |
+| 29 | 上海证券报 | cnstock.com |
+| 30 | 证券时报 | stcn.com |
+| 31 | 证券日报 | zqrb.cn |
+| 32 | 金融时报 | financialnews.com.cn |
+| 33 | 中国银行保险报 | cbimc.cn |
+
+**三、省级新闻网站（31 个）**
+
+| 序号 | 网站名称 | 域名 | 省份 |
+|---|---|---|---|
+| 34 | 千龙网 | qianlong.com | 北京 |
+| 35 | 北方网 | enorth.com.cn | 天津 |
+| 36 | 长城网 | hebei.com.cn | 河北 |
+| 37 | 山西新闻网 | sxrb.com | 山西 |
+| 38 | 正北方网 | northnews.cn | 内蒙古 |
+| 39 | 东北网 | dbw.cn | 黑龙江 |
+| 40 | 中国吉林网 | cnjiwang.com | 吉林 |
+| 41 | 东北新闻网 | nen.com.cn | 辽宁 |
+| 42 | 东方网 | eastday.com | 上海 |
+| 43 | 新华报业网 | xhby.net | 江苏 |
+| 44 | 浙江在线 | zjol.com.cn | 浙江 |
+| 45 | 中安在线 | anhuinews.com | 安徽 |
+| 46 | 东南网 | fjsen.com | 福建 |
+| 47 | 中国江西网 | jxnews.com.cn | 江西 |
+| 48 | 大众网 | dzwww.com | 山东 |
+| 49 | 大河网 | dahe.cn | 河南 |
+| 50 | 荆楚网 | cnhubei.com | 湖北 |
+| 51 | 红网 | rednet.cn | 湖南 |
+| 52 | 南方网 | southcn.com | 广东 |
+| 53 | 广西新闻网 | gxnews.com.cn | 广西 |
+| 54 | 南海网 | hinews.cn | 海南 |
+| 55 | 华龙网 | cqnews.net | 重庆 |
+| 56 | 四川新闻网 | newssc.org | 四川 |
+| 57 | 多彩贵州网 | gog.cn | 贵州 |
+| 58 | 云南网 | yunnan.cn | 云南 |
+| 59 | 中国西藏新闻网 | chinatibetnews.com | 西藏 |
+| 60 | 西部网 | cnwest.com | 陕西 |
+| 61 | 每日甘肃网 | gansudaily.com.cn | 甘肃 |
+| 62 | 青海新闻网 | qhnews.com | 青海 |
+| 63 | 宁夏新闻网 | nxnews.net | 宁夏 |
+| 64 | 天山网 | ts.cn | 新疆 |
+
+**四、行业/专业类权威媒体（20 个）**
+
+| 序号 | 网站名称 | 域名 |
+|---|---|---|
+| 65 | 中国建设报 | chinajsb.cn |
+| 66 | 中国环境报 | cenews.com.cn |
+| 67 | 中国矿业报 | zgkyb.com |
+| 68 | 中国水利网 | chinawater.com.cn |
+| 69 | 中国气象报 | zgqxb.com.cn |
+| 70 | 中国交通报 | zgjtb.com |
+| 71 | 中国质量报 | cqn.com.cn |
+| 72 | 中国市场监管报 | cnnpn.com |
+| 73 | 中国知识产权报 | cipnews.com.cn |
+| 74 | 中国消费者报 | ccn.com.cn |
+| 75 | 中国商报 | zgswcn.com |
+| 76 | 中国煤炭报 | coalnews.net |
+| 77 | 中国应急管理报 | cem.gov.cn |
+| 78 | 中国组织人事报 | zuzhirenshi.com |
+| 79 | 中国审计报 | auditor.gov.cn |
+| 80 | 中国财经报 | cfen.com.cn |
+| 81 | 中国教育报 | jyb.cn |
+| 82 | 健康报 | jkb.com.cn |
+| 83 | 中国科学报 | sciencenet.cn |
+| 84 | 中国邮政报 | chinapostnews.com.cn |
+
+**五、重点行业/能源/财经补充（16 个）**
+
+| 序号 | 网站名称 | 域名 |
+|---|---|---|
+| 85 | 中国能源网 | china5e.com |
+| 86 | 中国石油和化学工业联合会 | cpcia.org.cn |
+| 87 | 中国钢铁工业协会 | chinaisa.org.cn |
+| 88 | 中国有色金属工业协会 | chinania.org.cn |
+| 89 | 中国电力企业联合会 | cec.org.cn |
+| 90 | 中国煤炭工业协会 | coalchina.org.cn |
+| 91 | 人民政协网 | rmzxb.com.cn |
+| 92 | 中国新闻网（侨网） | qiaowang.org |
+| 93 | 中国社会报 | shehuiwang.cn |
+| 94 | 中国劳动保障报 | mohrss.gov.cn |
+| 95 | 中国政府采购报 | cgpnews.cn |
+| 96 | 中国民族报 | mzb.com.cn |
+| 97 | 中国城乡金融报 | cxtimes.com |
+| 98 | 中国食品报 | cnfoodnet.com |
+| 99 | 中国有色金属报 | yszqnet.com |
+| 100 | 求是网 | qstheory.cn |
+
+**检索规则**：
+- 以上 100 个网站 + .gov.cn 政府网站 + 央企官网 + IEA/EIA/World Bank 等国际组织官网 = 完整可检索范围
+- 凡不在上述白名单中的网站（如商业门户、自媒体、非官方聚合网站），禁止检索和引用
+- 搜索引擎返回的非白名单结果，仅可作为线索追溯白名单内的原始出处
 
 ## 战略规划报告编写模式
 
