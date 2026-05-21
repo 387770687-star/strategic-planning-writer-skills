@@ -19,7 +19,23 @@ Specify: planning topic, period and target year, region/business line, required 
 
 ### 2. Inventory Available Materials
 
-Catalog: user-provided files, internal notes, official/public sources, and missing data. Use `references/source-map.md` to match topics to appropriate sources.
+按以下优先级检索可用材料，**禁止跳步**：
+
+**第一优先级 — `wiki/` 目录**：
+- wiki/ 是整理后的结构化知识，优先检索
+- 搜索关键词匹配的 wiki 页面，直接提取相关信息
+
+**第二优先级 — `raw/` 目录**：
+- 仅当 wiki/ 中信息不足时检索 raw/
+- raw/ 存放原始资料（政策文件、报告原文、数据表格等），只读
+- 搜索到的原始材料需要提取和归纳后使用
+
+**第三优先级 — WebSearch 官方网站检索**：
+- 仅当 wiki/ 和 raw/ 均无法满足需求时启动
+- 限定官方网站：政府 .gov.cn、部委网站、央企官网、国家统计局、IEA 等
+- 检索结果标注来源 URL
+
+Catalog: 用户提供的文件、内部笔记、wiki/raw 知识库材料、官方网站检索结果、以及缺失数据。使用 `references/source-map.md` 匹配主题到合适的来源。
 
 ### 3. Build an Evidence Table
 
@@ -80,11 +96,22 @@ Use `references/evidence-pack-template.md` for formatting.
 
 **数据缺失时的检索优先规则**（重要）：
 
-- 首先检索已上传的知识库（wiki 知识库）
-- 知识库中缺失的数据，必须通过 WebSearch 检索官方网站补充（政府网站 .gov.cn、部委网站、央企官网、国家统计局、IEA等国际组织官网）
+- 第一优先：检索已上传的知识库 `wiki/` 目录（整理后的结构化知识）
+- 第二优先：检索 `raw/` 目录（原始资料，只读）
+- 第三优先：通过 WebSearch 检索官方网站补充（政府网站 .gov.cn、部委网站、央企官网、国家统计局、IEA等国际组织官网）
 - 检索到的数据必须交叉验证，单源数据标注"单一来源，未经交叉验证"
-- 仅当知识库和官方网站均无法找到时，才标记为 `[待补充：...]`
-- **禁止**跳过 WebSearch 检索直接标记 `[待补充]`
+- 仅当 wiki/、raw/ 和官方网站均无法找到时，才标记为 `==[待补充：...]==`
+- **禁止跳步**：不得跳过 wiki/ 和 raw/ 直接使用 WebSearch
+
+**时效性校验规则**（重要）：
+
+知识库中的旧数据可能已过时。即使 wiki/raw 中已有数据，也必须进行时效性校验：
+
+- **校验对象**：统计数据（超过2年）、政策文件（超过5年或有修订可能）、市场数据、行业指标
+- **校验方法**：用关键数据词在官方网站（.gov.cn、央企官网、国家统计局等）搜索最新年份的对应数据
+- **校验通过**：标注"来源：知识库，经官网校验"
+- **数据已更新**：以官方最新数据为准，替换旧数据，标注"来源：知识库，已更新至 XX 年官方数据"
+- **无法校验**：标注"知识库数据，时效性未经官方校验"
 
 **数据来源限制**：
 
